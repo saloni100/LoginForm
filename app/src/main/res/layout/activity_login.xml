@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pink"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".LoginActivity">
+
+
+    <TextView
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"/>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/margintop"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"/>
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="  "
+        android:background="@drawable/rounded_button_drawable"
+
+        />
+
+    <TextView
+        android:id="@+id/tv_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:textSize="20sp"
+        android:layout_marginTop="@dimen/margintop"
+        android:textColor="@color/white"
+        android:textStyle="bold|italic"/>
+
+    <EditText
+        android:id="@+id/edt_password"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="  "
+        android:background="@drawable/rounded_button_drawable"
+        />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="@dimen/btn_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margintop"
+        android:text="@string/login"
+        android:background="@color/white"/>
+
+
+</LinearLayout>

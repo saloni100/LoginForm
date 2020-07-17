@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity implements View.OnClickListener {
 
-    String itemtype;
+    String itemtype = " ";
     EditText edt_username, edt_type, edt_password;
     Button registerbtn;
     DatabaseHelper db;
@@ -85,6 +85,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if (password.length() == 0) {
             failFlag = true;
             edt_password.setError("Password is required");
+        }
+        if (itemtype.equals(" ")) {
+            failFlag = true;
+            edt_type.setError("type cannot be null");
         }
 
         if (failFlag == false) {

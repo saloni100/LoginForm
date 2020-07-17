@@ -51,12 +51,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void startLoginActivity() {
         Intent intent1 = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent1);
+        //finish();
     }
 
     private void startRegisterActivity() {
         Intent intent2 = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent2);
-
+      //  finish();
     }
 
 

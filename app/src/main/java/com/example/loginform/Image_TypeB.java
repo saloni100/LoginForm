@@ -19,10 +19,5 @@ public class Image_TypeB extends AppCompatActivity {
         setContentView(R.layout.activity_image__type_b);
     }
 
-    @Override
-    public void onBackPressed() {
 
-        startActivity(new Intent(this,MainActivity.class));
-        this.finish();
-    }
 }

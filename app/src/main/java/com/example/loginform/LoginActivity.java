@@ -62,23 +62,40 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         String password = edt_password.getText().toString().trim();
         boolean b_check = db.checkUserExist(username,password);
 
-        if (username.length() == 0) {
-            failFlag = true;
-            edt_username.setError("Please fill the username");
-        }
-        if (password.length() == 0) {
-            failFlag = true;
-            edt_password.setError("Password is required");
-        }
-        if(!b_check)
+
+        if(username.length()==0 || password.length()==0)
         {
+            failFlag=true;
+            Toast.makeText(getApplicationContext(),"PLease fill the details",Toast.LENGTH_SHORT).show();
+        }
+
+         else if(username.length()!=0 && password.length()!=0)
+        {
+            boolean b = db.checkUserExist(username,password);
+            if(b==false){
+                Toast.makeText(getApplicationContext(),"Wrong password",Toast.LENGTH_SHORT).show();
+            failFlag = true;
+            }
+        }
+
+        //Redirected to register activity if user does not exist
+        else if(!b_check)
+        {
+            Toast.makeText(getApplicationContext(),"Username does not exist , Registertation required",Toast.LENGTH_LONG).show();
             Intent i = new Intent(LoginActivity.this,RegisterActivity.class);
             startActivity(i);
-            finish();
+
         }
+
+
+
 
         return failFlag;
     }
+
+
+
+
 
 
     private void checkUserAndFetchType() {
@@ -101,21 +118,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (result.equals("B")) {
                 Intent i2 = new Intent(LoginActivity.this, Image_TypeB.class);
                 startActivity(i2);
-                //finish();
+                finish();
+
 
             }  else if (result.equals("A")) {
                 Intent i1 = new Intent(LoginActivity.this, Image_TypeA.class);
                 startActivity(i1);
-               // finish();
+                finish();
+
 
             }  else if (result.equals("C")) {
                 Intent i3 = new Intent(LoginActivity.this, Image_TypeC.class);
                 startActivity(i3);
-               // finish();
+                finish();
 
-            } else{
-
-                Toast.makeText(getApplicationContext(), "User does not exist, please add valid details", Toast.LENGTH_SHORT).show();
             }
 
         }
